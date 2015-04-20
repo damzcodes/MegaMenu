@@ -41,11 +41,29 @@
 # end
 
 # Methods defined in the helpers block are available in templates
-# helpers do
-#   def some_helper
-#     "Helping"
-#   end
-# end
+helpers do
+  def menu_link_dropdown?(link)
+    link.sublinks && link.sublinks.any? 
+  end
+  alias_method :menu_link_flyout?, :menu_link_dropdown?
+
+  def menu_link_mega?(link)
+    menu_link_dropdown?(link) && link.sublinks.any?{ |s| s.sublinks && s.sublinks.any? }
+  end
+
+  def menu_flyout_class(link)
+    'flyout' if menu_link_flyout?(link)
+  end
+
+  def menu_link_classes(link)
+    classes = []
+    classes << "dropdown" if menu_link_dropdown?(link)
+    classes << "mega" if menu_link_mega?(link)
+    classes.join(" ")
+  end
+end
+
+
 
 set :css_dir, 'stylesheets'
 
