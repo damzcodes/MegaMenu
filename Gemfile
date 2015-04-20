@@ -16,3 +16,4 @@ gem "tzinfo-data", platforms: [:mswin, :mingw]
 gem "slim"
 
 gem 'middleman-gh-pages'
+gem "therubyracer"
