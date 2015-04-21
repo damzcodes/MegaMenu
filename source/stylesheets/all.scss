@@ -125,10 +125,8 @@ header{
     ul{
       padding-left: 0px;
     }
-    li{
-      &:hover{
+    li.flyout:hover{
         background-color: $white;
-      }
     }
     .flyout-trigger {
       @include link_appearance(13px);
@@ -137,6 +135,7 @@ header{
 
     .non-flyout a{
       color: #f47421;
+      font-size: 13px;
       @include link_padding
     }
   }
@@ -176,4 +175,12 @@ header{
 .main{
   padding-top: 20px;
   padding-bottom: 20px;
+}
+
+
+.advert-prints{
+  background-image: url(http://i5.walmartimages.com/dfw/4ff9c6c9-65c1/k2-_14d715e3-f078-4186-af5a-2a2a3f9a8bf1.v1.png);
+  height: 465px;
+  background-repeat: no-repeat;
+  background-size: contain;
 }
