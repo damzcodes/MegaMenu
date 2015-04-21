@@ -3,19 +3,23 @@
 		ul.list-inline
 			- data.links.each do |link|
 				li.nav-main-primary class=menu_link_classes(link)
-					a href=link.url =link.name
+					a.dropdown-trigger href=link.url =link.name
 					- if menu_link_dropdown?(link)
 						.nav-main-subnav
-							ul
+							ul.list-unstyled
 								- link.sublinks.each do |dropdown_link|
-									li.list-unstyled class=menu_flyout_class(dropdown_link)
-										a href=dropdown_link.url =dropdown_link.name
-										- if menu_link_flyout?(dropdown_link)
+									- if menu_link_flyout?(dropdown_link)
+										li.flyout
+											a.flyout-trigger =dropdown_link.name
 											.nav-subnav-flyout
 												.row
 													- dropdown_link.sublinks.each do |flyout_link|
-														.col-md-2
+														.col-md-3
 															a href=flyout_link.url =flyout_link.name
-
+															- flyout_link.sublinks and flyout_link.sublinks.each do |flyout_sublinks|
+																a.flyout_sublink href=flyout_sublinks.url =flyout_sublinks.name
+									- else 
+										li.non-flyout
+											a href=dropdown_link.url =dropdown_link.name
 
 

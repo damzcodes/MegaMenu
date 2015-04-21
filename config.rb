@@ -51,10 +51,6 @@ helpers do
     menu_link_dropdown?(link) && link.sublinks.any?{ |s| s.sublinks && s.sublinks.any? }
   end
 
-  def menu_flyout_class(link)
-    'flyout' if menu_link_flyout?(link)
-  end
-
   def menu_link_classes(link)
     classes = []
     classes << "dropdown" if menu_link_dropdown?(link)
