@@ -1,3 +1,3 @@
 # MegaMenu
 
-A megamenu similar to that used on walmart.com.
+Draft of Walmart Photo megamenu, viewable [here](http://damzcodes.github.io/MegaMenu).
