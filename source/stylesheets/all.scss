@@ -24,7 +24,7 @@ $grey_border: rgb(239, 239, 239) solid 1px;
 }
 
 @mixin link_padding{
-  padding-left: 20px;
+  padding-left: 16px;
   padding-right: 20px;
 }
 
@@ -57,9 +57,7 @@ header{
   a{
     @include link_appearance;
   }
-  .nav-main-primary > a{
-    margin-left: 30px;
-  }
+
   .nav-main-primary:first-child > a{
       margin-left: 0;
       padding-left: 15px;
@@ -69,12 +67,16 @@ header{
     &.mega{
       width: 209px;
       border-right: rgb(239, 239, 239) solid 1px;
+      &.dropdown-trigger{
+        padding-left: 0px;
+        padding-right:0px;
+      }
     }
     &:after{
       content: none;
       position: absolute;
       top: 17px;
-      right: 19px;
+      right: 24px;
       width: 0;
       height: 0;
       border: 7px solid transparent;
@@ -86,6 +88,9 @@ header{
       transform-origin: center 3px;
       content: "";
     }
+    &:first-child:after{
+      right: 19px;
+    }
     &.active:after{
       -webkit-transform: rotate(-180deg);
       -ms-transform: rotate(-180deg);
@@ -94,7 +99,12 @@ header{
     &.active{
       background-color: $mega_background;
     }
+    .dropdown-trigger{
+      padding-right:60px;
+      padding-left: 30px;
+    }
   }
+  .nav-main-primary
   .nav-main-subnav{
     overflow: hidden;
     z-index: 200;
@@ -128,6 +138,11 @@ header{
     li.flyout:hover{
         background-color: $white;
     }
+    .flyout{
+
+    padding-left: 18px;
+
+    }
     .flyout-trigger {
       @include link_appearance(13px);
       @include link_padding;
@@ -136,7 +151,9 @@ header{
     .non-flyout a{
       color: #f47421;
       font-size: 13px;
-      @include link_padding
+      padding-left: 33px;
+      padding-right: 20px;
+
     }
   }
 
