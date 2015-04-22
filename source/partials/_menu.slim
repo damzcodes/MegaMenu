@@ -1,26 +1,25 @@
 #menu
-  .container
-    ul.list-inline
-      - data.links.each do |link|
-        li.nav-main-primary class=menu_link_classes(link)
-          a.dropdown-trigger href=link.url =link.name
-          - if menu_link_dropdown?(link)
-            .nav-main-subnav
-              ul.list-unstyled
-                - link.sublinks.each do |dropdown_link|
-                  - if menu_link_flyout?(dropdown_link)
-                    li.flyout
-                      a.flyout-trigger =dropdown_link.name
-                      .nav-subnav-flyout 
-                        .row
-                          - dropdown_link.sublinks.each do |flyout_link|
-                            .col-xs-3
-                              a href=flyout_link.url =flyout_link.name
-                              - flyout_link.sublinks and flyout_link.sublinks.each do |flyout_sublinks|
-                                a.flyout_sublink href=flyout_sublinks.url =flyout_sublinks.name
-                          .col-xs-3.advert class="advert-#{dropdown_link.name.downcase.gsub(" ", "-")}"
-                  - else 
-                    li.non-flyout
-                      a href=dropdown_link.url =dropdown_link.name
+  ul.list-inline
+    - data.links.each do |link|
+      li.nav-main-primary class=menu_link_classes(link)
+        a.dropdown-trigger href=link.url =link.name
+        - if menu_link_dropdown?(link)
+          .nav-main-subnav
+            ul.list-unstyled
+              - link.sublinks.each do |dropdown_link|
+                - if menu_link_flyout?(dropdown_link)
+                  li.flyout
+                    a.flyout-trigger =dropdown_link.name
+                    .nav-subnav-flyout 
+                      .row
+                        - dropdown_link.sublinks.each do |flyout_link|
+                          .col-xs-3
+                            a href=flyout_link.url =flyout_link.name
+                            - flyout_link.sublinks and flyout_link.sublinks.each do |flyout_sublinks|
+                              a.flyout_sublink href=flyout_sublinks.url =flyout_sublinks.name
+                        .col-xs-3.advert class="advert-#{dropdown_link.name.downcase.gsub(" ", "-")}"
+                - else 
+                  li.non-flyout
+                    a href=dropdown_link.url =dropdown_link.name
 
 

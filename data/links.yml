@@ -1,6 +1,6 @@
 ---
 - 
-  name: Shop All Photo
+  name: Photo Products
   url: '#'
   sublinks:
     - 
@@ -200,26 +200,6 @@
 -
   name: My Projects
   url: '#'
-  sublinks:  
-      -
-        name: Matte
-        url: '#'
-      -
-        name: Gloss
-        url: '#'
-      -
-        name: Posters
-        url: '#'
 - 
   name: My Photos
   url: '#'
-  sublinks:  
-      -
-        name: Matte
-        url: '#'
-      -
-        name: Gloss
-        url: '#'
-      -
-        name: Posters
-        url: '#'
