@@ -17,13 +17,20 @@
   <body class="<%= page_classes %>">
     <header>
       <div class="container top-nav">
+
         <div class="row">
           <div class="col-xs-6">
             <a href="#" class="logo"></a>
           </div>
           <div class="col-xs-4">
-            <div class="input-group">
-              <input type="text" class="form-control search-bar" placeholder="Search Photo">
+            <ul class="list-inline mini-nav">
+              <a href="#">Back to Walmart.com</a>
+              <a href="#">Hello, Sign In</a>
+              <a href="#" class="dropdown">My Photo Account</a>
+              <a href="#">Help</a>
+            </ul>
+            <div class="input-group search-group">
+              <input type="text" class="form-control search-bar pull-left" placeholder="Search Photo">
               <span class="input-group-btn">
                 <button type="submit" class="btn btn-default glyphicon glyphicon-search search-btn"></button>
               </span>
@@ -32,21 +39,27 @@
           </div>
         </div>
       </div>
-      <div class="container">
-        <div class="row">
-          <div class="col-xs-6">
-            <%= partial "partials/menu" %>
+      </header>
+      <nav class="main-nav">
+        <div class="container">
+          <div class="row">
+            <div class="col-xs-6">
+              <%= partial "partials/menu" %>
+            </div>
+            <div class="col-xs-4">
+              <a href="#" class="shipping pull-right"> Photo Cart</a>
+              <div class="cart-quantity">
+                <p class="quantity">1</p>
+              </div>
+              <div class="glyphicon glyphicon-shopping-cart pull-right shipping"></div>
+              
+              <p class="shipping pull-right"> FREE SHIPPING on orders of $50 or more </p>
+            </div>
+            
           </div>
-          <div class="col-xs-4">
-            <p class="shipping"> FREE SHIPPING on orders of $50 or more </p>
-            <div class="glyphicon glyphicon-shopping-cart shipping"></div>
-            <a href="#" class="shipping"> Photo Cart</a>
-          </div>
-          
-          <div class="col-xs-2"></div>
         </div>
-      </div>
-    </header>
+      </nav>
+<!--     </header> -->
     <div class="container main">
       <%= yield %>
     </div>
