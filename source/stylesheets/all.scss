@@ -40,11 +40,19 @@ $menu_font: 'MyriadPro-Regular';
   }
 }
 
+p {
+  font-family: $menu_font;
+}
+
+a {
+  font-family: $menu_font;
+}
+
 header{
   /*background-color: $white;*/
 
   a.logo{
-    background-image: url(../images/walmartphotoblue.svg);
+    background-image: url(../images/photo_logo.png);
     background-repeat: no-repeat;
     background-size: cover;
     height: 51px;
@@ -58,6 +66,7 @@ header{
 
     .list-inline.mini-nav{
       width: 350px;
+      margin-left: 274px;
         a {
           padding-left: 5px;
           padding-right: 5px;
@@ -109,12 +118,13 @@ header{
     width: 15px;
     border-radius: 50%;
     position: absolute;
-    right: 101px;
+    right: 110px;
+    top: 2px;
     .quantity{
       margin-bottom: 0px;
-      padding-left: 5px;
+      padding-left: 4.4px;
       font-size: 10px;
-      padding-top: 2px;
+      padding-top: 1px;
     };
   }
  
